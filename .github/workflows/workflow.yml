@@ -1,0 +1,16 @@
+name: aWorkflow
+
+on: 
+  push:
+
+# see more events on https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+# ex:
+  # pull-request:
+  # branches:  
+  #  include branches
+  # branches-ignore: 
+  #  or exclude branches
+
+
+
+
