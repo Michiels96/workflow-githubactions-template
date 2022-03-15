@@ -3,11 +3,11 @@
 
 ## Workflow
 
-Syntax can be found https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+Syntax can be found, see [here](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions).
 
-Events that trigger a workflow: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+Events that trigger a workflow, see [here](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
 
-
+If your yaml file syntax is incorrect, you can check it [here](https://yamlchecker.com/).
 
 
 ## GitHub Actions

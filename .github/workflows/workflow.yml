@@ -1,15 +1,40 @@
-name: aWorkflow
-
-on: 
-  push:
-
 # see more events on https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
-# ex:
+
+# jobs peut etre vu comme des stages (gitlab)
+name: aWorkflow name
+on: push
+# autres exemples:
   # pull-request:
   # branches:  
-  #  include branches
+  #  trigger en fonction d'une branche ou plusieurs
   # branches-ignore: 
-  #  or exclude branches
+  #  trigger sur toute branche, à pars celles précisées dans branches-ignore
+  # pour préciser plusieurs branches, la syntaxe est la suivante :
+  # on:
+  # push:
+  #   branches:    
+  #     - 'main'
+  #     - 'releases/**'
+  #   paths:
+  #    - '**.js'
+  # ici il va exécuter le workflow uniquement lors d'un push sur les branches
+  # main & celles qui commencent par 'releases/**', 
+  # uniquement si le commit qui précède inclus un changement d'un unj ou plsieurs fichier js
+  # 
+jobs:
+  premierjob:
+    runs-on: ubuntu-latest
+    steps:
+    # dans chaque workflow, le premier step sera toujours l'appel à l'action checkout
+    # ça permet au runner d'accèder au repo et de le tester
+        - name: Checkout the repository
+          uses: actions/checkout@v2
+    # autre exemple, ici on fait appel a un github action qui installe, 
+    # dans ce cas ci java dans le runner
+        - name: Set up JDK 11
+          uses: actions/setup-java@v1
+          with:
+              java-version: 11
 
 
 
